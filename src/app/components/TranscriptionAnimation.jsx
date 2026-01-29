@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import anime from "animejs";
 
 export default function TranscriptionSection() {
   useEffect(() => {
@@ -20,17 +19,20 @@ export default function TranscriptionSection() {
         el.style.strokeDashoffset = length;
       });
 
-      (anime.default || anime)({
-        targets,
-        strokeDashoffset: 0,
-        easing: "easeInOutSine",
-        duration: 300,
-        delay: function (el, i) {
-          return i * 20;
-        },
-        direction: "alternate",
-        endDelay: 200,
-        loop: true,
+      import("animejs").then((anime) => {
+        const animeInstance = anime.default || anime;
+        animeInstance({
+          targets,
+          strokeDashoffset: 0,
+          easing: "easeInOutSine",
+          duration: 300,
+          delay: function (el, i) {
+            return i * 20;
+          },
+          direction: "alternate",
+          endDelay: 200,
+          loop: true,
+        });
       });
     }
 
