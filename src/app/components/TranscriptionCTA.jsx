@@ -13,11 +13,6 @@ export default function TranscriptionCTA() {
           <div className="rounded-xl border border-white/10 backdrop-blur-md bg-white/5 p-6 shadow-lg text-center hover:scale-[1.03] transition-all duration-300">
             <h3 className="text-lg font-semibold mb-2">Talk to an expert</h3>
             <p className="text-sm text-gray-300">
-              US/Canada:{" "}
-              <a href="tel:1-888-800-9950" className="text-purple-400 underline">
-               +1 (347) 209-7224
-              </a>
-              <br />
               PK:{" "}
               <a href="tel:+44-808-501-3933" className="text-purple-400 underline">
                +92 333 5207925
