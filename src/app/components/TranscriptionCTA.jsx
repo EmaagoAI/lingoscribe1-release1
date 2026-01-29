@@ -15,12 +15,12 @@ export default function TranscriptionCTA() {
             <p className="text-sm text-gray-300">
               US/Canada:{" "}
               <a href="tel:1-888-800-9950" className="text-purple-400 underline">
-                1-888-888-8888
+               +1 (347) 209-7224
               </a>
               <br />
               PK:{" "}
               <a href="tel:+44-808-501-3933" className="text-purple-400 underline">
-                +92-000-0000000
+               +92 333 5207925
               </a>
             </p>
           </div>
@@ -29,7 +29,7 @@ export default function TranscriptionCTA() {
             <h3 className="text-lg font-semibold mb-2">Support team</h3>
             <p className="text-sm text-gray-300">
               Visit our{" "}
-              <Link href="#" className="text-purple-400 underline">
+              <Link href="#contact" className="text-purple-400 underline">
                 support center
               </Link>
             </p>
@@ -40,7 +40,7 @@ export default function TranscriptionCTA() {
             <h3 className="text-lg font-semibold mb-2">Careers</h3>
             <p className="text-sm text-gray-300">
               Visit our{" "}
-              <Link href="#" className="text-purple-400 underline">
+              <Link href="#contact" className="text-purple-400 underline">
                 careers
               </Link>{" "}
               page for openings
