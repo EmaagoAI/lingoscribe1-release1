@@ -65,7 +65,7 @@ export default function TranscriptionSection() {
         <div className="w-full lg:w-1/2 space-y-5">
           <h3 className="text-3xl font-semibold">Automated transcription</h3>
           <p>
-           Accurate transcription in <strong>50+ global and indigenous languages</strong>. Lingoscribe’s powerful web editor lets you search, edit, organize, and share transcripts seamlessly—anytime, anywhere. Ideal for interviews, oral histories, academic research, community recordings, and more.
+           Accurate transcription in <strong>50+ global and indigenous languages</strong>. Lingoscribe’s powerful web editor lets you search, edit, organize, and share transcripts seamlessly anytime, anywhere. Ideal for interviews, oral histories, academic research, community recordings, and more.
           </p>
           <p>
             <a
