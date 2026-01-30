@@ -23,7 +23,7 @@ export default function LingoscribeFeatures() {
           className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-12"
         >
           
-          We enable transcription, analysis, and documentation in the world’s least digitized linguistic communities—preserving voices and accelerating access.
+          We enable transcription, analysis, and documentation in the world’s least digitized linguistic communities, preserving voices and accelerating access.
         </motion.p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
