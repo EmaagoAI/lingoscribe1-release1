@@ -103,7 +103,7 @@ export default function SpeechSolutions() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center">
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6">
               <span className="bg-gradient-to-r from-[#7EC8F5] via-[#B4A9F8] to-[#A05CEB] bg-clip-text text-transparent">
-                AI-Powered Speech Solutions
+                AI Powered Speech Solutions
               </span>
             </h2>
             <p className="max-w-2xl mx-auto text-gray-400 text-lg">
@@ -127,7 +127,7 @@ export default function SpeechSolutions() {
                 <Card
                   key={index}
                   className="
-                    relative group overflow-hidden border border-white/10 bg-[#121212] rounded-3xl p-8 
+                    relative group overflow-hidden border border-white/10 bg-[#121212] rounded-3xl p-4 
                     transition-all duration-500 hover:border-white/20
                     w-full h-auto min-h-[400px] lg:w-[400px] lg:h-[500px] lg:flex-shrink-0
                   "
