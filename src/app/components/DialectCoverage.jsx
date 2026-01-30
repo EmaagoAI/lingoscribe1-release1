@@ -35,7 +35,7 @@ const regions = [
     desc: "From formal literature to the colloquial streets of Karachi and Lahore.",
     accentColor: "group-hover:border-purple-500/40",
     glowColor: "bg-purple-500/20",
-    dialects: ["English, Standard Urdu", "Regional Urdu"],
+    dialects: ["English","Standard Urdu", "Regional Urdu"],
   }
 ];
 
