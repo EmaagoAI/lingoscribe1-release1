@@ -105,7 +105,7 @@ const IndustryTabs = ({ tabsData, title }) => {
                       transition-all duration-300 ease-in-out
                       ${activeTab === tab.id
                         ? 'bg-purple-600 text-white shadow-md dark:bg-purple-700'
-                        : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700/50 hover:text-purple-400'
+                        : 'text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700/50 hover:text-purple-400'
                       }
                     `}
                     onClick={() => setActiveTab(tab.id)}
@@ -132,10 +132,10 @@ const IndustryTabs = ({ tabsData, title }) => {
                 >
                   <div className="flex flex-col-reverse md:flex-row items-center gap-8 lg:gap-12">
                     <div className="w-full md:w-1/2 text-center md:text-left">
-                      <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-50 mb-4 sm:mb-5" title={tab.heading}>
+                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 sm:mb-5" title={tab.heading}>
                         {tab.heading}
                       </h3>
-                      <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 sm:mb-8 leading-relaxed">
+                      <p className="text-lg text-gray-300 mb-6 sm:mb-8 leading-relaxed">
                         {tab.description}
                       </p>
                       <a
