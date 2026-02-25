@@ -8,7 +8,6 @@ import {
   FaYoutube,
   FaMedium,
 } from "react-icons/fa";
-
 export default function Footer() {
   const footerLinks = {
     Features: [
@@ -39,27 +38,14 @@ export default function Footer() {
       "Request a Demo",
       "Partnerships",
     ],
-   
   };
-
-  const flagUrls = [
-    "https://flagcdn.com/w40/us.png", "https://flagcdn.com/w40/de.png", "https://flagcdn.com/w40/kr.png",
-    "https://flagcdn.com/w40/cn.png", "https://flagcdn.com/w40/it.png", "https://flagcdn.com/w40/fi.png",
-    "https://flagcdn.com/w40/se.png", "https://flagcdn.com/w40/gb.png", "https://flagcdn.com/w40/sa.png",
-    "https://flagcdn.com/w40/tr.png", "https://flagcdn.com/w40/pk.png",
-    "https://flagcdn.com/w40/es.png", "https://flagcdn.com/w40/jp.png", "https://flagcdn.com/w40/vn.png",
-    "https://flagcdn.com/w40/ro.png", "https://flagcdn.com/w40/gr.png", "https://flagcdn.com/w40/th.png",
-    "https://flagcdn.com/w40/ng.png", "https://flagcdn.com/w40/hr.png", "https://flagcdn.com/w40/bg.png",
-  ];
-
   const socialIcons = [
-    { icon: <FaTwitter />, link: "#" },
-    { icon: <FaInstagram />, link: "#" },
-    { icon: <FaLinkedinIn />, link: "#" },
-    { icon: <FaYoutube />, link: "#" },
-    { icon: <FaMedium />, link: "#" },
+    // { icon: <FaTwitter />, link: "#" },
+    // { icon: <FaInstagram />, link: "#" },
+    { icon: <FaLinkedinIn />, link: "https://www.linkedin.com/company/lingoscribe" },
+    // { icon: <FaYoutube />, link: "#" },
+    // { icon: <FaMedium />, link: "#" },
   ];
-
   return (
     <footer className="bg-[#0B0B0C] text-white pt-16 pb-10 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-6 gap-10 mb-12 border-b border-gray-600 pb-10">
@@ -89,13 +75,8 @@ export default function Footer() {
           </div>
         ))}
       </div>
-
-
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-sm text-gray-400">
         <p>© 2026 Lingoscribe. All Rights Reserved.</p>
-
-       
-
         <div className="flex gap-4 text-white text-lg">
           {socialIcons.map((s, idx) => (
             <a key={idx} href={s.link} className="hover:text-purple-400 transition">

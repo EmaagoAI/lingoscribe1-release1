@@ -1,41 +1,32 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
-
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-// --- SEO STRATEGY & METADATA ---
 export const metadata = {
-  metadataBase: new URL('https://www.lingoscribe.com'), // Replace with your actual domain
+  metadataBase: new URL('https://www.lingoscribe.com'), 
   title: {
     default: "Lingoscribe | AI Speech-to-Text for Underrepresented Languages",
     template: "%s | Lingoscribe"
   },
   description: "The world's first AI transcription engine for underserved languages. Accurate Speech-to-Text, Sentiment Analysis, and Translation for Urdu, Pashto, Punjabi, Sindhi, Balochi, and indigenous dialects.",
   keywords: [
-    // Core Functionality
     "AI Speech to Text",
     "Automated Transcription",
     "Audio Intelligence",
     "Voice Agent API",
     "Speaker Recognition",
     "Sentiment Analysis",
-    
-    // The "Money" Keywords (Your USP)
     "Underrepresented language transcription",
     "Indigenous language AI",
     "Low-resource language processing",
-    
-    // Specific Languages & Dialects (High SEO Value)
-    "Urdu Transcription",
-    "Pashto Speech to Text",
+    "Urdu Transcription", 
+    "Pashto Speech to Text",  
     "Afridi Dialect Transcription",
     "Peshawari Audio to Text",
     "Punjabi Transcription AI",
@@ -43,21 +34,18 @@ export const metadata = {
     "Sindhi Audio Transcription",
     "Balochi Voice AI",
     "Brahui Language Support",
-    
-    // Features
     "Multilingual Translation",
     "Audio Summarization",
     "Call Analytics for Dialects"
   ],
-  authors: [{ name: "Lingoscribe Team" }],
+  authors: [{ name: "Lingoscribe Team"}],
   creator: "Lingoscribe",
   publisher: "Lingoscribe",
-  formatDetection: {
+  formatDetection:{
     email: false,
     address: false,
     telephone: false,
   },
-  // Open Graph for Social Media (Facebook, LinkedIn, Discord)
   openGraph: {
     title: "Lingoscribe | Transcribe the World’s Underserved Voices",
     description: "From Afridi Pashto to Makrani Balochi. Transform audio into accurate text with the only AI built for indigenous and regional languages.",
@@ -65,24 +53,23 @@ export const metadata = {
     siteName: 'Lingoscribe',
     images: [
       {
-        url: '/og-image.jpg', // Ensure you create this image (1200x630px)
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Lingoscribe AI Dashboard showing Multilingual Transcription',
       },
+      
     ],
     locale: 'en_US',
     type: 'website',
   },
-  // Twitter Cards
   twitter: {
     card: 'summary_large_image',
     title: "Lingoscribe | AI for Indigenous Languages",
     description: "Accurate transcription and sentiment analysis for Urdu, Pashto, Punjabi, and other underrepresented languages.",
     images: ['/twitter-image.jpg'], 
-    creator: '@lingoscribe', // Replace with actual handle
+    creator: '@lingoscribe', 
   },
-  // Robot Crawling
   robots: {
     index: true,
     follow: true,
@@ -94,15 +81,11 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
-  // Canonical Link
   alternates: {
     canonical: 'https://www.lingoscribe.com',
   },
 };
-
 export default function RootLayout({ children }) {
-  // --- STRUCTURED DATA (JSON-LD) ---
-  // This tells Google explicitly that you are a Software Application serving businesses.
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -123,12 +106,11 @@ export default function RootLayout({ children }) {
       "Multilingual Translation",
       "Dialect Support (Afridi, Bugti, Makrani)"
     ]
+    
   };
-
   return (
     <html lang="en">
-      <head>
-        {/* Inject JSON-LD for Google Rich Snippets */}
+      <head>  
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

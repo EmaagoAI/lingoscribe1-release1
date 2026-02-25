@@ -15,6 +15,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -25,16 +26,19 @@
 }
 
 
-button{
+button {
   cursor: pointer;
 }
+
 @keyframes borderGlow {
   0% {
     box-shadow: 0 0 0px rgba(0, 255, 255, 0);
   }
+
   50% {
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
   }
+
   100% {
     box-shadow: 0 0 0px rgba(0, 255, 255, 0);
   }
@@ -55,9 +59,11 @@ button{
   0% {
     box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.7);
   }
+
   50% {
     box-shadow: 0 0 0 6px rgba(168, 85, 247, 0.2);
   }
+
   100% {
     box-shadow: 0 0 0 0 rgba(168, 85, 247, 0);
   }
@@ -66,6 +72,7 @@ button{
 .input-field {
   @apply w-full bg-transparent border-b border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-all pb-2;
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -74,16 +81,19 @@ html {
 
 .glow-active {
   animation: glowRing 2s infinite;
-  border: 2px solid #a855f7; /* Tailwind purple-500 */
+  border: 2px solid #a855f7;
+  /* Tailwind purple-500 */
 }
 
 @keyframes glow-border {
   0% {
     box-shadow: 0 0 0px #a855f7, 0 0 10px #a855f7, 0 0 20px #a855f7, 0 0 30px #a855f7 inset;
   }
+
   50% {
     box-shadow: 0 0 5px #a855f7, 0 0 15px #a855f7, 0 0 25px #a855f7, 0 0 40px #a855f7 inset;
   }
+
   100% {
     box-shadow: 0 0 0px #a855f7, 0 0 10px #a855f7, 0 0 20px #a855f7, 0 0 30px #a855f7 inset;
   }
@@ -91,4 +101,49 @@ html {
 
 #features {
   transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Flip Card Styles */
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.flip-card-front {
+  background: rgba(31, 41, 55, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+.flip-card-back {
+  background: rgba(31, 41, 55, 0.8);
+  transform: rotateY(180deg);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  backdrop-filter: blur(12px);
 }

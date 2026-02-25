@@ -27,31 +27,31 @@ export default function Home() {
       <div id="home">
         <HeaderHero />
       </div>
-{/* <VoiceAIHero/>   */}
+      {/* <VoiceAIHero/>   */}
       <div id="how it work">
         <HowItWorks />
-         <div id="try" >
-        {/* <AudioApiComponent /> */}
-      </div>
+        <div id="try" >
+          {/* <AudioApiComponent /> */}
+        </div>
         <LingoscribeFeatures />
       </div>
       <LingoScribeVideoSection />
-      <div
-        id="features"
-        className="transition-opacity duration-500 ease-in-out"
-      >
-        <SpeechSolutions />
-      </div>
+        {/* <div
+          id="features"
+          className="transition-opacity duration-500 ease-in-out"
+        >
+          <SpeechSolutions />
+        </div> */}
 
       <TranscriptionSection />
 
-     
+
       <div id="about">
         <AboutUs />
       </div>
       <EnterpriseScaleSection />
       <DialectCoverage />
-      <IndustryTabs/>
+      <IndustryTabs />
       <div className="my-15">
 
         <div id="contact">

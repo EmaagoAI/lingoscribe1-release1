@@ -22,7 +22,7 @@ export default function LingoscribeFeatures() {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-12"
         >
-          
+
           We enable transcription, analysis, and documentation in the world’s least digitized linguistic communities, preserving voices and accelerating access.
         </motion.p>
 
@@ -31,15 +31,29 @@ export default function LingoscribeFeatures() {
             <motion.div
               key={feature.title}
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2 }}
-              className="bg-gray-800/50 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition duration-300"
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              className="flip-card h-[220px] group cursor-pointer"
             >
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-purple-600 text-white hover:bg-purple-700 mb-4 mx-auto">
-                <feature.icon className="text-white" size={24} />
+              <div className="flip-card-inner">
+                {/* Front: Icon + Title */}
+                <div className="flip-card-front shadow-lg">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-purple-600 text-white mb-4 transition-transform duration-500 group-hover:scale-110">
+                    <feature.icon size={24} />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white text-center">
+                    {feature.title}
+                  </h3>
+                </div>
+
+                {/* Back: Description only */}
+                <div className="flip-card-back shadow-2xl p-6">
+                  <p className="text-gray-200 text-sm md:text-base leading-relaxed text-center">
+                    {feature.description}
+                  </p>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-gray-300 text-sm">{feature.description}</p>
             </motion.div>
           ))}
         </div>
