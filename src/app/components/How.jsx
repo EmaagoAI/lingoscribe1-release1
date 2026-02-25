@@ -65,7 +65,7 @@ const extraFeatures = [
   },
   {
     icon: <Users className="w-5 h-5 text-[#7EC8F5]" />,
-    title: "Speaker diarization",
+    title: "Speaker Diarization",
     color: "from-[#7EC8F5]/20 to-transparent",
     border: "border-[#7EC8F5]/20"
   },
