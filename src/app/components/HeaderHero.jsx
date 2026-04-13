@@ -113,7 +113,7 @@ export default function HeroHeader() {
     </button> */}
   <a
     href="https://platform.lingoscribe.ai"
-    onClick={(e) => { e.preventDefault(); handleNavClick("how it works"); }}
+    {/* onClick={(e) => { e.preventDefault(); handleNavClick("how it works"); }} */}
     className="ml-2 md:ml-4 px-3 md:px-5 py-1.5 border border-white rounded-lg text-xs md:text-md font-medium hover:bg-white hover:text-black transition-all duration-200"
   >
     Get Started
@@ -218,7 +218,7 @@ export default function HeroHeader() {
           <div className="absolute z-10">
             <a
               href="https://platform.lingoscribe.ai/"
-              onClick={(e) => { e.preventDefault(); const target = document.getElementById("how it works"); if (target) target.scrollIntoView({ behavior: "smooth", block: "start" }); }}
+              {/* onClick={(e) => { e.preventDefault(); const target = document.getElementById("how it works"); if (target) target.scrollIntoView({ behavior: "smooth", block: "start" }); }} */}
               className="bg-gradient-to-r from-white via-[#C08CFA] to-[#A05CEB] bg-clip-text text-transparent text-lg font-medium cursor-pointer"
             >
               Try Now
