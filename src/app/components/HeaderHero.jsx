@@ -104,15 +104,15 @@ export default function HeroHeader() {
   </nav>
 
   <div className="hidden md:flex flex-row gap-2">
-    <button
+    {/* <button
       onClick={() => handleNavClick("contact")}
       className="group flex items-center gap-2 px-3 md:px-4 py-2 bg-white text-black rounded-lg text-xs md:text-sm font-semibold transition-all duration-300 hover:bg-gray-200 hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] hover:-translate-y-0.5 active:translate-y-0"
     >
       <Calendar className="w-3 h-3 md:w-4 md:h-4 text-gray-800 group-hover:text-black transition-colors" />
       <span>Book a Demo</span>
-    </button>
+    </button> */}
   <a
-    href="#try"
+    href="https://platform.lingoscribe.ai"
     onClick={(e) => { e.preventDefault(); handleNavClick("how it works"); }}
     className="ml-2 md:ml-4 px-3 md:px-5 py-1.5 border border-white rounded-lg text-xs md:text-md font-medium hover:bg-white hover:text-black transition-all duration-200"
   >
@@ -217,7 +217,7 @@ export default function HeroHeader() {
           <LottiePlayer />
           <div className="absolute z-10">
             <a
-              href="#try"
+              href="https://platform.lingoscribe.ai/"
               onClick={(e) => { e.preventDefault(); const target = document.getElementById("how it works"); if (target) target.scrollIntoView({ behavior: "smooth", block: "start" }); }}
               className="bg-gradient-to-r from-white via-[#C08CFA] to-[#A05CEB] bg-clip-text text-transparent text-lg font-medium cursor-pointer"
             >
