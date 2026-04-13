@@ -23,7 +23,7 @@ export default function ContactForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const mailtoLink = `mailto:khubaib.khalid@emaago.com?subject=Contact from ${formData.firstName} ${formData.lastName}&body=Name: ${formData.firstName} ${formData.lastName}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0ACompany: ${formData.company}%0D%0AIndustry: ${formData.industry}%0D%0AService: ${formData.service}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
+        const mailtoLink = `mailto:imran.raza@emaago.com?subject=Contact from ${formData.firstName} ${formData.lastName}&body=Name: ${formData.firstName} ${formData.lastName}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0ACompany: ${formData.company}%0D%0AIndustry: ${formData.industry}%0D%0AService: ${formData.service}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
 
         window.location.href = mailtoLink;
     };
