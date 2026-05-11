@@ -1,6 +1,7 @@
 
 "use client";
 
+import Link from "next/link";
 import {
   FaTwitter,
   FaInstagram,
@@ -77,12 +78,20 @@ export default function Footer() {
       </div>
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-sm text-gray-400">
         <p>© 2026 Lingoscribe. All Rights Reserved.</p>
-        <div className="flex gap-4 text-white text-lg">
-          {socialIcons.map((s, idx) => (
-            <a key={idx} href={s.link} className="hover:text-purple-400 transition">
-              {s.icon}
-            </a>
-          ))}
+        <div className="flex items-center gap-6">
+          <Link
+            href="/privacy-policy"
+            className="text-gray-300 hover:text-purple-400 transition"
+          >
+            Privacy Policy
+          </Link>
+          <div className="flex gap-4 text-white text-lg">
+            {socialIcons.map((s, idx) => (
+              <a key={idx} href={s.link} className="hover:text-purple-400 transition">
+                {s.icon}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>
