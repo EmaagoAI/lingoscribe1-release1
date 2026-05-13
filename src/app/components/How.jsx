@@ -52,12 +52,6 @@ const extraFeatures = [
     border: "border-[#7EC8F5]/20"
   },
   {
-    icon: <Brain className="w-5 h-5 text-[#B4A9F8]" />,
-    title: "Sentiment Analysis",
-    color: "from-[#B4A9F8]/20 to-transparent",
-    border: "border-[#B4A9F8]/20"
-  },
-  {
     icon: <Sparkles className="w-5 h-5 text-[#D08CF8]" />,
     title: "AI Summarization",
     color: "from-[#D08CF8]/20 to-transparent",
@@ -68,6 +62,12 @@ const extraFeatures = [
     title: "Speaker Diarization",
     color: "from-[#7EC8F5]/20 to-transparent",
     border: "border-[#7EC8F5]/20"
+  },
+   {
+    icon: <Brain className="w-5 h-5 text-[#B4A9F8]" />,
+    title: "Sentiment Analysis",
+    color: "from-[#B4A9F8]/20 to-transparent",
+    border: "border-[#B4A9F8]/20"
   },
 ];
 
