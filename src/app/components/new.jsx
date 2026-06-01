@@ -209,7 +209,7 @@ export default function AudioApiComponent() {
         {/* RIGHT SIDE: TRANSCRIPTION */}
         <div className="bg-[#141414] rounded-lg p-4 border w-full border-white/10 h-full min-h-[400px] sm:min-h-[500px] flex flex-col">
           <h3 className="text-base font-semibold mb-3">
-            Transcription and Translation| Powered by LingoScribe
+            Transcription and Translation| Powered by Lingoscribe
           </h3>
           {/* //kk */}
           <div className="space-y-4 text-sm text-gray-300 overflow-y-auto max-h-[400px] sm:max-h-[460px] pr-2 scrollbar-dark">

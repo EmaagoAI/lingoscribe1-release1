@@ -85,12 +85,12 @@ export default function HeroHeader() {
       home
     </button>
 
-    <button
+    {/* <button
       onClick={() => handleNavClick("solutions")}
       className="hover:text-gray-300 transition-colors capitalize"
     >
       Solutions
-    </button>
+    </button> */}
 
     {["how it works", "features", "about"].map((item) => (
       <button

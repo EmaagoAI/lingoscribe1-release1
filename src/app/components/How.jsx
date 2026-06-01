@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useRef, useState, useMemo } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -19,12 +18,8 @@ import {
   Users
 } from "lucide-react";
 import WaveSurfer from "wavesurfer.js";
-
 gsap.registerPlugin(ScrollTrigger);
 
-// ==========================================
-// DATA & CONFIG
-// ==========================================
 
 const steps = [
   {
@@ -65,7 +60,7 @@ const extraFeatures = [
   },
    {
     icon: <Brain className="w-5 h-5 text-[#B4A9F8]" />,
-    title: "Sentiment Analysis",
+    title: "Keyword Spotting",
     color: "from-[#B4A9F8]/20 to-transparent",
     border: "border-[#B4A9F8]/20"
   },
@@ -75,17 +70,13 @@ const LANGUAGES = [
   { id: "afridi", label: "Afridi" },
   { id: "bittani", label: "Bittani" },
   { id: "brahui", label: "Brahui" },
-  { id: "bugti", label: "Bugti" },
+  { id: "bugti", label: "Balochi" },
   { id: "makrani", label: "Makrani" },
   { id: "marri", label: "Marri" },
   { id: "mehsud", label: "Mehsud" },
   { id: "pesh", label: "Peshawari" },
   { id: "waziri", label: "Waziri" },
 ];
-
-// ==========================================
-// SUB-COMPONENTS
-// ==========================================
 
 const formatTime = (seconds) => {
   if (!seconds) return "0:00";
@@ -356,7 +347,7 @@ function AudioApiComponent() {
         <div className="flex flex-col w-full shrink-0 relative z-[110]">
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4 gap-3">
             <div>
-              <h2 className="text-base md:mt-0 mt-2 md:text-left text-center font-bold text-white">Transcription and Translation <span className="lg:inline hidden md:text-normal text-[11px]">|</span> Powered by LingoScribe</h2>
+              <h2 className="text-base md:mt-0 mt-2 md:text-left text-center font-bold text-white">Transcription and Translation <span className="lg:inline hidden md:text-normal text-[11px]">|</span> Powered by Lingoscribe</h2>
               <p className="text-[12px] md:text-left text-center text-gray-500 mt-0.5">Select a language to see real-time processing</p>
             </div>
 
@@ -387,7 +378,7 @@ function AudioApiComponent() {
             <h3 className="text-[12px]  md:text-sm font-semibold text-white">
               Live Analysis Results
             </h3>
-            <span className="text-[10px] bg-[#6F4BD8]/20 text-[#B4A9F8] px-2 py-0.5 rounded border border-[#6F4BD8]/30">Powered by LingoScribe</span>
+            <span className="text-[10px] bg-[#6F4BD8]/20 text-[#B4A9F8] px-2 py-0.5 rounded border border-[#6F4BD8]/30">Powered by Lingoscribe</span>
           </div>
 
           <div className="space-y-4 text-xs sm:text-sm text-gray-300 overflow-y-auto pr-2 scrollbar-dark flex-grow">

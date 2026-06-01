@@ -53,9 +53,12 @@ export default function TranscriptionCTA() {
           </p>
           <a href="#contact">
 
+          <a href="https://platform.lingoscribe.ai">
           <button className="px-6 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition duration-200 text-sm font-medium">
             Get started
           </button>
+          </a>
+
           </a>
         </div>
       </div>

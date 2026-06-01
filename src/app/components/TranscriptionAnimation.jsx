@@ -69,7 +69,7 @@ export default function TranscriptionSection() {
           </p>
           <p>
             <a
-              href="#contact"
+              href="https://platform.lingoscribe.ai"
               onClick={(e) => {
                 e.preventDefault();
                 document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });

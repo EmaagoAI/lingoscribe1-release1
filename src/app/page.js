@@ -33,7 +33,11 @@ export default function Home() {
         <div id="try" >
           {/* <AudioApiComponent /> */}
         </div>
+
+  <div id="features" >
         <LingoscribeFeatures />
+  </div>
+
       </div>
       <LingoScribeVideoSection />
         {/* <div
@@ -43,7 +47,7 @@ export default function Home() {
           <SpeechSolutions />
         </div> */}
 
-      <TranscriptionSection />
+      {/* <TranscriptionSection /> */}
 
 
       <div id="about">
