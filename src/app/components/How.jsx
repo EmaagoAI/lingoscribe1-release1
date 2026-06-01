@@ -156,7 +156,7 @@ function CustomDropdown({ options, selectedId, onChange }) {
 }
 
 // Component to handle word-by-word highlighting
-function HighlightedText({ text, currentTime, duration, colorClass = "text-[#7EC8F5]" }) {
+function HighlightedText({ text, currentTime, duration, colorClass = "text-[#7EC8F5]", isRtl = false }) {
   const words = useMemo(() => {
     return text ? text.split(" ") : [];
   }, [text]);
@@ -167,7 +167,10 @@ function HighlightedText({ text, currentTime, duration, colorClass = "text-[#7EC
   if (!text || text === "Loading...") return <span className="text-gray-500">{text}</span>;
 
   return (
-    <p className="leading-6 whitespace-pre-wrap bg-[#1A1A1A] p-3 rounded-lg border border-white/5">
+    <p
+      dir={isRtl ? "rtl" : "ltr"}
+      className={`leading-6 whitespace-pre-wrap bg-[#1A1A1A] p-3 rounded-lg border border-white/5 ${isRtl ? "text-right" : "text-left"}`}
+    >
       {words.map((word, index) => {
         const isVisible = index <= activeIndex;
 
@@ -399,6 +402,7 @@ function AudioApiComponent() {
                 currentTime={currentTime}
                 duration={duration}
                 colorClass="text-[#7EC8F5]"
+                isRtl
               />
             </div>
 

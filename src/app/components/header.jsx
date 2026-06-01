@@ -38,7 +38,7 @@ export default function HeroHeader() {
 
           <span className="bg-gradient-to-r from-[#7EC8F5] to-white bg-clip-text text-transparent">
             Speak.
-          </span>{' '}
+          </span>{' '}  
 
           <span className="bg-gradient-to-r from-[#7EC8F5] via-white to-[#C08CFA] bg-clip-text text-transparent">
             Transcribe.
