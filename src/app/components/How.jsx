@@ -67,15 +67,14 @@ const extraFeatures = [
 ];
 
 const LANGUAGES = [
-  { id: "afridi", label: "Afridi" },
-  { id: "bittani", label: "Bittani" },
-  { id: "brahui", label: "Brahui" },
+  { id: "pesh", label: "Phasto Peshawari" },
+  { id: "afridi", label: "Phasto Afridi" },
+  { id: "bittani", label: "Phasto Bittani"},
+  { id: "mehsud", label: "Phasto Mehsud" },
+  { id: "waziri", label: " Phasto Waziri" },
   { id: "bugti", label: "Balochi" },
-  { id: "makrani", label: "Makrani" },
-  { id: "marri", label: "Marri" },
-  { id: "mehsud", label: "Mehsud" },
-  { id: "pesh", label: "Peshawari" },
-  { id: "waziri", label: "Waziri" },
+  { id: "makrani", label: "Balochi Makrani" },
+  { id: "brahui", label: "Brahui" },
 ];
 
 const formatTime = (seconds) => {

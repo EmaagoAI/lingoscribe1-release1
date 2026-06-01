@@ -60,7 +60,7 @@ export default function UseCases() {
           Who Is It For?
         </h2>
         <p className="text-[#CCCCCC] mt-4 text-lg max-w-2xl mx-auto">
-          LingoScribe serves creators, professionals, and pioneers who rely on clarity and precision.
+          Lingoscribe serves creators, professionals, and pioneers who rely on clarity and precision.
         </p>
       </div>
 

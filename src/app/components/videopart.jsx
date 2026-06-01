@@ -36,7 +36,7 @@ export default function LingoScribeVideoSection() {
             </span>
           </h2>
       <p className="text-lg w-full">
-        LingoScribe transforms voice into accurate, structured text with a focus on underrepresented languages, dialects, and indigenous communities. Our real-time speech-to-text engine supports multilingual output and is built to scale where no other tools reach.
+        Lingoscribe transforms voice into accurate, structured text with a focus on underrepresented languages, dialects, and indigenous communities. Our real-time speech-to-text engine supports multilingual output and is built to scale where no other tools reach.
       </p>
       <div className="relative group w-fit">
         <div className="absolute inset-0 rounded-md border border-transparent group-hover:border-green-400 transition duration-300" />
