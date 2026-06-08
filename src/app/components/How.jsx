@@ -67,11 +67,11 @@ const extraFeatures = [
 ];
 
 const LANGUAGES = [
-  { id: "pesh", label: "Phasto Peshawari" },
-  { id: "afridi", label: "Phasto Afridi" },
-  { id: "bittani", label: "Phasto Bittani"},
-  { id: "mehsud", label: "Phasto Mehsud" },
-  { id: "waziri", label: " Phasto Waziri" },
+  { id: "pesh", label: "Pashto Peshawari" },
+  { id: "afridi", label: "Pashto Afridi" },
+  { id: "bittani", label: "Pashto Bittani"},
+  { id: "mehsud", label: "Pashto Mehsud" },
+  { id: "waziri", label: " Pashto Waziri" },
   { id: "bugti", label: "Balochi" },
   { id: "makrani", label: "Balochi Makrani" },
   { id: "brahui", label: "Brahui" },
