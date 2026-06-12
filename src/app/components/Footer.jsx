@@ -22,7 +22,7 @@ export default function Footer() {
       "Language Detection",
       "Speaker Profiling",
       "NER (Name Entity Recognition)",
-      "Link Analysis",
+      "Keyword Spotting",
       "Speech Recognition API",
     ],
   
