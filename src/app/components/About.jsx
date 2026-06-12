@@ -50,7 +50,7 @@ export default function AboutUs() {
             // { icon: <FaLanguage />, label: "Language Detection" },
             { icon: <FaGlobeAfrica />, label: "Speaker Profiling" },
             { icon: <MdHealthAndSafety />, label: "Entity Recognition" },
-            { icon: <GiArtificialIntelligence />, label: "Link Analysis Module" },
+            { icon: <GiArtificialIntelligence />, label: "Keyword Spotting" },
           ].map((f, i) => (
             <div
               key={i}
