@@ -20,10 +20,13 @@ import FloatingWordsCloud from "./components/FlowTypingText";
 import IndustryTabs from "./components/IndustryTabs";
 import VoiceAIHero from "./components/voiceModel";
 import DialectCoverage from "./components/DialectCoverage";
+import HashScrollHandler from "./components/HashScrollHandler";
+
 
 export default function Home() {
   return (
     <div>
+         <HashScrollHandler />
       <div id="home">
         <HeaderHero />
       </div>
