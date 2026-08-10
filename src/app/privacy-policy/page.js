@@ -7,7 +7,7 @@ export const metadata = {
   description:
     "Read Lingoscribe's Privacy Policy. Learn how Lingoscribe.ai collects, uses, and protects your information when you use our AI speech-to-text, translation, NER, and summarization services.",
   alternates: {
-    canonical: "https://www.lingoscribe.com/privacy-policy",
+    canonical: "https://lingoscribe.ai/privacy-policy",
   },
 };
 

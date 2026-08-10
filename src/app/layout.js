@@ -9,7 +9,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 export const metadata = {
-  metadataBase: new URL('https://www.lingoscribe.com'), 
+  metadataBase: new URL('https://lingoscribe.ai'),
   title: {
     default: "Lingoscribe | AI Speech-to-Text for Underrepresented Languages",
     template: "%s | Lingoscribe"
@@ -49,7 +49,7 @@ export const metadata = {
   openGraph: {
     title: "Lingoscribe | Transcribe the World’s Underserved Voices",
     description: "From Afridi Pashto to Makrani Balochi. Transform audio into accurate text with the only AI built for indigenous and regional languages.",
-    url: 'https://www.lingoscribe.com',
+    url: 'https://lingoscribe.ai',
     siteName: 'Lingoscribe',
     images: [
       {
@@ -82,7 +82,7 @@ export const metadata = {
     },
   },
   alternates: {
-    canonical: 'https://www.lingoscribe.com',
+    canonical: 'https://lingoscribe.ai',
   },
 };
 export default function RootLayout({ children }) {
