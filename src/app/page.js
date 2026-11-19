@@ -1,74 +1,35 @@
-import Image from "next/image";
-import HeaderHero from "./components/HeaderHero";
-import HowItWorks from "./components/How";
-import UseCases from "./components/work";
-import SpeechSolutions from "./components/solution";
-import AudioDemo from "./components/TryAudio";
-import SpeechHero from "./components/SpeechHero";
-import EnterpriseScaleSection from "./components/EnterpriseScaleSection";
-import SpeechCards from "./components/work";
-import AudioTranscriptionPage from "./components/audio";
-import AudioApiComponent from "./components/new";
-import TranscriptionSection from "./components/TranscriptionAnimation";
-import ContactForm from "./components/contact";
-import TranscriptionCTA from "./components/TranscriptionCTA";
-import Footer from "./components/Footer";
-import LingoscribeFeatures from "./components/LingoscribeFeatures";
-import AboutUs from "./components/About";
-import LingoScribeVideoSection from "./components/videopart";
-import FloatingWordsCloud from "./components/FlowTypingText";
-import IndustryTabs from "./components/IndustryTabs";
-import VoiceAIHero from "./components/voiceModel";
-import DialectCoverage from "./components/DialectCoverage";
-import HashScrollHandler from "./components/HashScrollHandler";
+import { getContent } from "@/content";
+import SiteHeader from "@/components/layout/SiteHeader";
+import SiteFooter from "@/components/layout/SiteFooter";
+import { PlayerProvider } from "@/components/player/PlayerProvider";
+import LensHero from "@/components/home/LensHero";
+import ToolsTour from "@/components/home/ToolsTour";
+import LanguagesSection from "@/components/home/LanguagesSection";
+import WaysSection from "@/components/home/WaysSection";
+import BuiltSection from "@/components/home/BuiltSection";
+import SectorsSection from "@/components/home/SectorsSection";
+import CtaSection from "@/components/sections/CtaSection";
 
-
+// Home page. Each section gets its own slice of the content, so all the
+// text stays in content/<locale>/ and the sections only lay it out.
 export default function Home() {
-  return (
-    <div>
-         <HashScrollHandler />
-      <div id="home">
-        <HeaderHero />
-      </div>
-      {/* <VoiceAIHero/>   */}
-      <div id="how it work">
-        <HowItWorks />
-        <div id="try" >
-          {/* <AudioApiComponent /> */}
-        </div>
-
-  <div id="features" >
-        <LingoscribeFeatures />
-  </div>
-
-      </div>
-      <LingoScribeVideoSection />
-        {/* <div
-          id="features"
-          className="transition-opacity duration-500 ease-in-out"
-        >
-          <SpeechSolutions />
-        </div> */}
-
-      {/* <TranscriptionSection /> */}
-
-
-      <div id="about">
-        <AboutUs />
-      </div>
-      <EnterpriseScaleSection />
-      <DialectCoverage />
-      <IndustryTabs />
-      <div className="my-15">
-
-        <div id="contact">
-          <ContactForm />
-        </div>
-        <TranscriptionCTA />
-      </div>
-      <Footer />
-    </div>
-  );
+    const { common, home, languages } = getContent();
+    return (
+        <>
+            <SiteHeader t={common} />
+            {/* one player for the page: the hero shows it, the language list can load clips into it */}
+            <PlayerProvider>
+                <main>
+                    <LensHero t={home.hero} player={common.player} tl={languages} />
+                    <ToolsTour t={home.tools} tl={languages} />
+                    <LanguagesSection t={home.languages} tl={languages} />
+                    <WaysSection t={home.ways} />
+                    <BuiltSection t={home.built} />
+                    <SectorsSection t={home.sectors} />
+                    <CtaSection t={home.cta} trust={common.trust} />
+                </main>
+            </PlayerProvider>
+            <SiteFooter t={common} />
+        </>
+    );
 }
-
-
