@@ -1,13 +1,29 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Instrument_Sans, Newsreader, Noto_Naskh_Arabic } from "next/font/google";
+import { THEME_SCRIPT } from "@/lib/theme";
 import "./globals.css";
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+
+// Instrument Sans for the interface, Newsreader (italic) for translations,
+// Noto Naskh Arabic for Urdu, Pashto, Balochi and the other Arabic-script languages.
+const instrument = Instrument_Sans({
+  variable: "--font-instrument",
   subsets: ["latin"],
+  axes: ["wdth"],
+  display: "swap",
 });
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
   subsets: ["latin"],
+  style: ["normal", "italic"],
+  axes: ["opsz"],
+  display: "swap",
 });
+const naskh = Noto_Naskh_Arabic({
+  variable: "--font-noto-naskh",
+  subsets: ["arabic"],
+  weight: ["400", "500"],
+  display: "swap",
+});
+
 export const metadata = {
   metadataBase: new URL('https://lingoscribe.ai'),
   title: {
@@ -109,15 +125,17 @@ export default function RootLayout({ children }) {
     
   };
   return (
-    <html lang="en">
-      <head>  
+    // suppressHydrationWarning: THEME_SCRIPT sets data-theme before React loads
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-black antialiased`}
+        className={`${instrument.variable} ${newsreader.variable} ${naskh.variable}`}
       >
         {children}
       </body>

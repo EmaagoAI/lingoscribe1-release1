@@ -1,149 +1,268 @@
 @import "tailwindcss";
 
+/* ---------------------------------------------------------------------------
+   Theme
+   Colours are CSS variables, switched by data-theme on <html> (see
+   ThemeToggle). Tailwind reads them through @theme inline, so components use
+   plain utilities: bg-panel, text-fg-muted, border-rule, ...
+   --------------------------------------------------------------------------- */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+/* Small phones: narrow (under 390px) or short (under 760px tall) */
+@custom-variant compact (@media (max-width: 389px), (max-width: 767px) and (max-height: 759px));
 
-
-/* For glass effect */
-.glassmorphic {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+:root {
+  --bg: #ffffff;
+  --panel: #ffffff;
+  --soft: #f5f7fc;
+  --chip: #f1f4fa;
+  --fg: #0b1233;
+  --fg-muted: #535c79;
+  --rule: #e4e8f1;
+  --primary: #3b5cd8;
+  --primary-hover: #2d4ac2;
+  --on-primary: #ffffff;
+  --link: #3150cc;
+  --tide: #0a8279;
+  --bar-off: #d3d9e7;
+  --chip-on: rgba(59, 92, 216, 0.1);
+  --marker: #ffe27a;
+  --marker-ink: #0b1233;
+  --inv: #0b1233;
+  --inv-sub: #aeb7d6;
+  --inv-border: rgba(255, 255, 255, 0.28);
+  --inv-bar: rgba(255, 255, 255, 0.1);
+  --ambient: rgba(59, 92, 216, 0.13);
+  --glow: rgba(59, 92, 216, 0.22);
+  --header: rgba(255, 255, 255, 0.82);
+  --logo-filter: brightness(0);
+  --shadow: 0 1px 2px rgba(11, 18, 51, 0.05), 0 20px 50px rgba(11, 18, 51, 0.08);
+  --lift: 0 2px 4px rgba(11, 18, 51, 0.04), 0 26px 60px rgba(11, 18, 51, 0.13);
+  --chat: #e9edf5; /* chat mock-ups: background, incoming and outgoing bubbles */
+  --bubble-in: #ffffff;
+  --bubble-out: #dce6fb;
+  --code: #0b1233; /* code blocks */
+  --map-dot: #aeb6cb;
+  --danger: #b42318; /* form errors */
+  color-scheme: light;
 }
 
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
+[data-theme="dark"] {
+  --bg: #070b19;
+  --panel: #0f1631;
+  --soft: #0b1124;
+  --chip: #141c3a;
+  --fg: #edf0fa;
+  --fg-muted: #a0a9c8;
+  --rule: #1e2747;
+  --primary-hover: #4b6be6;
+  --link: #9aaeff;
+  --tide: #3ccfc3;
+  --bar-off: #2c355c;
+  --chip-on: rgba(110, 138, 255, 0.18);
+  --marker: rgba(255, 214, 102, 0.3);
+  --marker-ink: #fff3c9;
+  --inv: #0f1838;
+  --inv-border: rgba(255, 255, 255, 0.24);
+  --ambient: rgba(124, 149, 255, 0.18);
+  --glow: rgba(110, 138, 255, 0.35);
+  --header: rgba(7, 11, 25, 0.82);
+  --logo-filter: none;
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  --lift: 0 30px 70px rgba(0, 0, 0, 0.55);
+  --chat: #080c1d;
+  --bubble-in: #1a2246;
+  --bubble-out: #22336b;
+  --code: #060a18;
+  --map-dot: #3e4772;
+  --danger: #f87171;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-soft: var(--soft);
+  --color-chip: var(--chip);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-rule: var(--rule);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-on-primary: var(--on-primary);
+  --color-link: var(--link);
+  --color-tide: var(--tide);
+  --color-bar-off: var(--bar-off);
+  --color-chip-on: var(--chip-on);
+  --color-marker: var(--marker);
+  --color-marker-ink: var(--marker-ink);
+  --color-inv: var(--inv);
+  --color-inv-sub: var(--inv-sub);
+  --color-inv-border: var(--inv-border);
+  --color-inv-bar: var(--inv-bar);
+  --color-ambient: var(--ambient);
+  --color-glow: var(--glow);
+  --color-header: var(--header);
+  --color-chat: var(--chat);
+  --color-bubble-in: var(--bubble-in);
+  --color-bubble-out: var(--bubble-out);
+  --color-code: var(--code);
+  --color-map-dot: var(--map-dot);
+  --color-danger: var(--danger);
+
+  --shadow-card: var(--shadow);
+  --shadow-lift: var(--lift);
+
+  --font-sans: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-newsreader), Georgia, serif;
+  --font-naskh: var(--font-noto-naskh), serif;
+}
+
+/* ---------------------------------------------------------------------------
+   Motion. Use as Tailwind classes: animate-rise, animate-fade, ...
+   Delays and one-off durations go in [animation-delay:..] on the element.
+   --------------------------------------------------------------------------- */
+@theme {
+  --ease-soft: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  --animate-rise: rise 900ms var(--ease-soft) both;
+  --animate-word: word 900ms var(--ease-soft) both;
+  --animate-fade: fade 420ms var(--ease-soft) both;
+  --animate-slide: slide 520ms var(--ease-soft) both;
+  --animate-pop: pop 360ms var(--ease-soft) both;
+  --animate-reveal: reveal 480ms var(--ease-soft) both;
+  --animate-zoom: zoom 900ms var(--ease-soft) both;
+  --animate-tune: tune 560ms var(--ease-soft) both;
+  --animate-spin-in: spin-in 380ms ease both;
+  --animate-grow: grow 700ms var(--ease-soft) backwards;
+  --animate-eq: eq 0.8s ease-in-out infinite;
+  --animate-breath: breath 3s ease-in-out infinite;
+  --animate-blink: blink 900ms ease infinite;
+  --animate-ping-soft: ping-soft 2.4s ease-out 1.2s infinite;
+  --animate-progress: progress 1s linear both;
+  --animate-sweep: sweep 1s linear both;
+  --animate-marquee: marquee 46s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 54s linear infinite;
+  --animate-orbit: orbit 3.2s linear infinite;
+  --animate-bob: bob 6s ease-in-out infinite;
+  --animate-typing: typing 1000ms ease 700ms both;
+
+  @keyframes rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+  @keyframes word { from { opacity: 0; transform: translateY(0.4em); filter: blur(8px); } to { opacity: 1; transform: none; filter: blur(0); } }
+  @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  @keyframes slide { from { opacity: 0; transform: translateX(22px); } to { opacity: 1; transform: none; } }
+  @keyframes pop { from { opacity: 0; transform: scale(0.88); } to { opacity: 1; transform: none; } }
+  @keyframes reveal { from { grid-template-rows: 0fr; opacity: 0; } to { grid-template-rows: 1fr; opacity: 1; } }
+  @keyframes zoom { from { opacity: 0; transform: scale(1.05); } to { opacity: 1; transform: none; } }
+  @keyframes tune { from { opacity: 0; transform: translateY(14px); filter: blur(5px); } to { opacity: 1; transform: none; filter: blur(0); } }
+  @keyframes spin-in { from { opacity: 0; transform: rotate(-90deg) scale(0.6); } to { opacity: 1; transform: none; } }
+  @keyframes grow { from { transform: scaleY(0.04); } to { transform: scaleY(1); } }
+  @keyframes eq { 0%, 100% { transform: scaleY(0.25); } 50% { transform: scaleY(1); } }
+  @keyframes breath { 0%, 100% { transform: scaleY(0.32); } 50% { transform: scaleY(1); } }
+  @keyframes blink { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+  @keyframes ping-soft { 0% { box-shadow: 0 0 0 0 var(--glow); } 70% { box-shadow: 0 0 0 22px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+  @keyframes progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @keyframes sweep { from { --sweep: 0deg; } to { --sweep: 360deg; } }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes marquee-reverse { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+  @keyframes orbit { to { --orbit-angle: 360deg; } }
+  @keyframes bob { 0%, 100% { transform: none; } 50% { transform: translateY(-7px); } }
+  @keyframes typing { 0% { opacity: 0; } 20%, 80% { opacity: 1; } 100% { opacity: 0; height: 0; padding: 0; margin-top: -14px; } }
+}
+
+/* Animatable custom properties (the lens position and the player's moving border). */
+@property --orbit-angle { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+@property --sweep { syntax: "<angle>"; inherits: false; initial-value: 0deg; } /* how far a border has filled */
+@property --mx { syntax: "<length-percentage>"; inherits: true; initial-value: 72%; }
+@property --my { syntax: "<length-percentage>"; inherits: true; initial-value: 30%; }
+
+/* ---------------------------------------------------------------------------
+   Things Tailwind can't express on its own
+   --------------------------------------------------------------------------- */
+
+/* The hero lens: a circle of radius --lens-r at (--mx, --my). Outside it shows
+   one layer, inside the other. useLensDrift moves it. */
+@utility lens-outside {
+  mask-image: radial-gradient(circle var(--lens-r, 150px) at var(--mx) var(--my), transparent 97%, #000 100%);
+}
+@utility lens-inside {
+  mask-image: radial-gradient(circle var(--lens-r, 150px) at var(--mx) var(--my), #000 97%, transparent 100%);
+}
+
+/* A border drawn only on the edge of a rounded box (used for the moving
+   gradient around the player while it plays). */
+@utility border-mask {
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+/* Fades the ends of a scrolling row. */
+@utility fade-edges {
+  mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+}
+
+/* Scroll-linked motion, where the browser supports it; elsewhere things just show. */
+@utility scroll-reveal {
+  @supports (animation-timeline: view()) {
+    animation: rise linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 75%;
   }
-
-  to {
-    transform: rotate(360deg);
+}
+@utility scroll-settle {
+  @supports (animation-timeline: view()) {
+    animation: settle linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
   }
 }
-
-.spin-slow {
-  animation: spin-slow 20s linear infinite;
-}
-
-
-button {
-  cursor: pointer;
-}
-
-@keyframes borderGlow {
-  0% {
-    box-shadow: 0 0 0px rgba(0, 255, 255, 0);
-  }
-
-  50% {
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
-  }
-
-  100% {
-    box-shadow: 0 0 0px rgba(0, 255, 255, 0);
+@utility scroll-grow-x {
+  transform-origin: left;
+  @supports (animation-timeline: view()) {
+    animation: progress linear both;
+    animation-timeline: view();
+    animation-range: entry 25% cover 50%;
   }
 }
-
-.animate-border-glow {
-  animation: borderGlow 2s infinite ease-in-out;
-}
-
-.usecase-card {
-  opacity: 1;
-  transform: none;
-}
-
-
-
-@keyframes glowRing {
-  0% {
-    box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.7);
-  }
-
-  50% {
-    box-shadow: 0 0 0 6px rgba(168, 85, 247, 0.2);
-  }
-
-  100% {
-    box-shadow: 0 0 0 0 rgba(168, 85, 247, 0);
+/* The header gets a shadow, and its reading bar fills, as the page scrolls. */
+@utility scroll-shadow {
+  @supports (animation-timeline: scroll()) {
+    animation: header-shadow linear both;
+    animation-timeline: scroll();
+    animation-range: 0 140px;
   }
 }
-
-.input-field {
-  @apply w-full bg-transparent border-b border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-all pb-2;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-
-
-.glow-active {
-  animation: glowRing 2s infinite;
-  border: 2px solid #a855f7;
-  /* Tailwind purple-500 */
-}
-
-@keyframes glow-border {
-  0% {
-    box-shadow: 0 0 0px #a855f7, 0 0 10px #a855f7, 0 0 20px #a855f7, 0 0 30px #a855f7 inset;
-  }
-
-  50% {
-    box-shadow: 0 0 5px #a855f7, 0 0 15px #a855f7, 0 0 25px #a855f7, 0 0 40px #a855f7 inset;
-  }
-
-  100% {
-    box-shadow: 0 0 0px #a855f7, 0 0 10px #a855f7, 0 0 20px #a855f7, 0 0 30px #a855f7 inset;
+@utility scroll-progress {
+  transform: scaleX(0);
+  transform-origin: left;
+  @supports (animation-timeline: scroll()) {
+    animation: progress linear both;
+    animation-timeline: scroll(root);
   }
 }
+/* Shown once the page has scrolled past the hero player. */
+@utility show-after-hero {
+  @supports (animation-timeline: scroll()) {
+    animation: mini-in linear both;
+    animation-timeline: scroll(root);
+    animation-range: 620px 760px;
+  }
+}
+@keyframes settle { from { opacity: 0.15; transform: translateY(48px) scale(0.96); } to { opacity: 1; transform: none; } }
+@keyframes header-shadow { to { box-shadow: 0 10px 30px rgba(11, 18, 51, 0.1); } }
+@keyframes mini-in { from { visibility: hidden; opacity: 0; transform: translateY(18px); } to { visibility: visible; opacity: 1; transform: none; } }
 
-#features {
-  transition: opacity 0.5s ease, visibility 0.5s ease;
+/* ---------------------------------------------------------------------------
+   Base
+   --------------------------------------------------------------------------- */
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-bg font-sans text-fg antialiased; }
+  button { cursor: pointer; }
+  :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 6px; }
 }
 
-/* Flip Card Styles */
-.flip-card {
-  perspective: 1000px;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  transform-style: preserve-3d;
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-}
-
-.flip-card-front {
-  background: rgba(31, 41, 55, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-}
-
-.flip-card-back {
-  background: rgba(31, 41, 55, 0.8);
-  transform: rotateY(180deg);
-  border: 1px solid rgba(168, 85, 247, 0.4);
-  backdrop-filter: blur(12px);
+/* Motion is decoration: switch it all off for visitors who ask for less. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
 }
