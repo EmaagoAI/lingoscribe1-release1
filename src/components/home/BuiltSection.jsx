@@ -10,7 +10,7 @@ import TextLink from "@/components/ui/TextLink";
 export default function BuiltSection({ t }) {
     const max = Math.max(...SPEECH_DATA.map((d) => d.hours));
     return (
-        <section id="built" aria-labelledby="built-title" className="bg-bg py-20 md:py-30">
+        <section id="built" aria-labelledby="built-title" className="bg-soft py-20 md:py-30">
             <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-18">
                 <div className="flex flex-col gap-6">
                     <SectionTitle id="built-title">{t.title}</SectionTitle>
@@ -28,7 +28,7 @@ export default function BuiltSection({ t }) {
                                 <div className="flex items-baseline justify-between gap-4">
                                     <span className="text-base font-medium text-fg">{t.stats[d.id]}</span>
                                     <span className="text-[30px] font-semibold leading-none tracking-[-0.03em] tabular-nums text-fg">
-                                        {d.hours.toLocaleString("en")}
+                                        {d.hours.toLocaleString("en")}+
                                         <span className="text-[15px] font-medium tracking-normal text-fg-muted"> {t.unit}</span>
                                     </span>
                                 </div>

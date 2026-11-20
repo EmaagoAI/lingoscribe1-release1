@@ -23,6 +23,7 @@ export const ROUTES = {
     solutions: "/solutions",
     trust: "/trust",
     sales: "/talk-to-sales",
+    speakers: "/native-speakers",
     signup: EXTERNAL.signUp, // "Start free" and sign-up go straight to the platform
     privacy: "/privacy-policy",
 };

@@ -5,7 +5,6 @@ import { PlayerProvider } from "@/components/player/PlayerProvider";
 import LensHero from "@/components/home/LensHero";
 import ToolsTour from "@/components/home/ToolsTour";
 import LanguagesSection from "@/components/home/LanguagesSection";
-import WaysSection from "@/components/home/WaysSection";
 import BuiltSection from "@/components/home/BuiltSection";
 import SectorsSection from "@/components/home/SectorsSection";
 import CtaSection from "@/components/sections/CtaSection";
@@ -23,7 +22,6 @@ export default function Home() {
                     <LensHero t={home.hero} player={common.player} tl={languages} />
                     <ToolsTour t={home.tools} tl={languages} />
                     <LanguagesSection t={home.languages} tl={languages} />
-                    <WaysSection t={home.ways} />
                     <BuiltSection t={home.built} />
                     <SectorsSection t={home.sectors} />
                     <CtaSection t={home.cta} trust={common.trust} />

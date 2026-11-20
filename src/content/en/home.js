@@ -2,7 +2,7 @@
 export const home = {
     hero: {
         title: ["Making", "AI", "understand", "people."],
-        subtitle: "Most AI hears noise in these languages. Lingoscribe hears what people mean.",
+        subtitle: "and the languages they speak.",
         primary: "Start free",
         secondary: "Talk to sales",
         lensBadge: "Lingoscribe",
@@ -74,17 +74,6 @@ export const home = {
         more: "+{count} more",
         hear: "Play the {language} recording",
         note: "Click to hear a real recording in that language.",
-    },
-
-    ways: {
-        title: "Use it where you already work",
-        items: {
-            browser: { title: "In the browser", body: "Upload or record audio. Nothing to install." },
-            api: { title: "Through the API", body: "Eight endpoints and one key." },
-            whatsapp: { title: "On WhatsApp", body: "Forward a voice note, get the text back." },
-            youtube: { title: "On YouTube", body: "Translated subtitles on any video." },
-            lingodub: { title: "With Dub Studio", body: "Dub whole videos. Invite-only." },
-        },
     },
 
     built: {

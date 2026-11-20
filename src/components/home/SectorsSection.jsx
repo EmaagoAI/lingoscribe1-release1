@@ -7,7 +7,7 @@ import TextLink from "@/components/ui/TextLink";
 // "Who uses it": four sectors in columns. `t` is content.home.sectors.
 export default function SectorsSection({ t }) {
     return (
-        <section id="sectors" aria-labelledby="sec-title" className="bg-soft py-20 md:py-24">
+        <section id="sectors" aria-labelledby="sec-title" className="bg-bg py-20 md:py-24">
             <Container className="flex flex-col gap-9">
                 <SectionTitle id="sec-title" size="sm">{t.title}</SectionTitle>
                 <ul className="m-0 grid list-none gap-8 p-0 sm:grid-cols-2 lg:grid-cols-4">

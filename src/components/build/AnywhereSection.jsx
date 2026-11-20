@@ -7,7 +7,8 @@ import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import { SectionLead, SectionTitle } from "@/components/ui/SectionHeading";
 
-// "Any language, around the world": a dot map with Pakistan lit, and what we
+// "Any language, around the world": a dot map with Pakistan lit (and, fainter,
+// the other places our languages are spoken), and what we
 // can do for a new language. `t` is content.build.anywhere.
 export default function AnywhereSection({ t }) {
     const label = fill(t.mapLabel, { count: liveVarieties().length });
@@ -18,11 +19,15 @@ export default function AnywhereSection({ t }) {
                     <div className="flex flex-col gap-[18px]">
                         <SectionTitle id="any-title">{t.title}</SectionTitle>
                         <SectionLead className="max-w-[30em]">{t.body}</SectionLead>
-                        <div><Button href={ROUTES.sales} size="lg">{t.cta}</Button></div>
+                        <div className="grid w-fit gap-3">{/* stacked, both as wide as the wider one */}
+                            <Button href={ROUTES.sales} size="lg">{t.cta}</Button>
+                            <Button href={ROUTES.speakers} variant="secondary" size="lg">{t.join}</Button>
+                        </div>
                     </div>
                     <figure className="relative m-0 flex flex-col gap-3">
                         <svg viewBox={WORLD_MAP.viewBox} aria-hidden="true" className="block h-auto w-full">
                             <path d={WORLD_MAP.land} fill="none" strokeLinecap="round" strokeWidth={3.36} className="stroke-map-dot opacity-80" />
+                            <path d={WORLD_MAP.regions} fill="none" strokeLinecap="round" strokeWidth={2.44} className="stroke-primary opacity-60" />
                             <path d={WORLD_MAP.home} fill="none" strokeLinecap="round" strokeWidth={2.44} className="stroke-primary" />
                         </svg>
                         {/* beside Pakistan where the page is wide enough for it, under the map otherwise */}

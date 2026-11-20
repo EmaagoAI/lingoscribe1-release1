@@ -8,6 +8,7 @@
 //   bob      seconds for one float cycle; delay offsets it so words don't move together
 //   edge     beside the heading on phones: hidden on small phones (see LensHero)
 //   wide     fills the gap beside the heading: shown only on large screens (1536px+)
+//   phone    fills the gap under the buttons: shown only on phones
 export const LENS_WORDS = [
     { lang: "ur", word: "آواز", meaning: "voice", x: 1.4, y: 2.7, depth: "mid", bob: 6, delay: -1 },
     { lang: "ps", word: "خلک", meaning: "people", x: 12.3, y: 13.9, depth: "near", bob: 7, delay: -2 },
@@ -50,6 +51,9 @@ export const LENS_WORDS = [
     { lang: "ur", word: "بات", meaning: "talk", x: 36.0, y: 73.0, depth: "mid", bob: 6, delay: -2 },
     { lang: "ps", word: "غږ", meaning: "voice", x: 52.0, y: 71.0, depth: "near", bob: 7, delay: -4 },
     { lang: "sd", word: "ڳالهه", meaning: "talk", x: 66.0, y: 74.0, depth: "far", bob: 5, delay: -1 },
+    { lang: "ur", word: "سنو", meaning: "listen", x: 14.0, y: 64.0, depth: "near", bob: 6, delay: -3, phone: true },
+    { lang: "fa", word: "مردم", meaning: "people", x: 44.0, y: 62.0, depth: "near", bob: 7, delay: -1, phone: true },
+    { lang: "pa", word: "بولی", meaning: "language", x: 80.0, y: 65.0, depth: "near", bob: 5, delay: -4, phone: true },
     { lang: "ur", word: "کہانی", meaning: "story", x: 27.0, y: 30.0, depth: "near", bob: 7, delay: -1, wide: true },
     { lang: "fa", word: "شهر", meaning: "city", x: 36.0, y: 21.0, depth: "far", bob: 6, delay: -3, wide: true },
     { lang: "sd", word: "ماڻهو", meaning: "people", x: 30.0, y: 52.0, depth: "mid", bob: 8, delay: -2, wide: true },

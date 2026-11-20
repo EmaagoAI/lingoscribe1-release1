@@ -24,7 +24,7 @@ export const build = {
             { title: "Every region sounds different.", note: "Same language, different voices." },
             { title: "So we started in Balochistan.", note: "The hardest place to start, so the method would work anywhere." },
             { title: "We hired native speakers.", note: "Through local offices in every province." },
-            { title: "Every recording became data.", note: "{hours} hours so far, and growing." },
+            { title: "Every recording became data.", note: "{hours}+ hours so far, and growing." },
         ],
     },
 
@@ -40,14 +40,14 @@ export const build = {
             },
             recordings: {
                 title: "Recordings",
-                stat: "{hours} hours",
+                stat: "{hours}+ hours",
                 body: "Everyday speech: at the market, at home, on the way to work.",
                 samplesLabel: "Some of the recordings",
             },
             text: {
                 title: "Text",
-                stat: "{hours} hours",
-                body: "Transcribed in native script by speakers of the dialect; {translated} hours translated.",
+                stat: "{hours}+ hours",
+                body: "Transcribed in native script by speakers of the dialect; {translated}+ hours translated.",
             },
             models: {
                 title: "Models",
@@ -76,6 +76,7 @@ export const build = {
         title: "Any language, around the world.",
         body: "Pakistan is where we started, not the limit. The same five stages work wherever AI doesn’t yet understand the people it serves.",
         cta: "Talk to us about a language",
+        join: "Join as a native speaker",
         mapLabel: "Started here: {count}+ languages and dialects",
         items: {
             data: { title: "Native-speaker data", body: "Find, hire and manage speakers where the language is spoken, and record the everyday speech models need." },
@@ -87,14 +88,8 @@ export const build = {
 
     team: {
         title: "The people behind it",
-        roles: { cofounder: "Co-founder", cto: "CTO", cpo: "CPO", advisor: "Strategic advisor" },
+        roles: { cofounder: "Co-founder", cto: "CTO", cpo: "CPO", advisor: "Strategic advisor", dataops: "Data Ops" },
         linkedin: "{name} on LinkedIn",
-        join: {
-            title: "Speak a regional language?",
-            body: "Join our network of native speakers and help build AI that understands your language.",
-            cta: "Join as a native speaker",
-            subject: "Native speaker",
-        },
     },
 
     cta: {

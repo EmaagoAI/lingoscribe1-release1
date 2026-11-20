@@ -7,7 +7,7 @@ export const developers = {
     },
 
     hero: {
-        title: "One API for the languages AI misses.",
+        title: "Build for the languages your users speak.",
         subtitle: "Eight endpoints and one key. Send audio, get back transcripts, translations, summaries and speech.",
         primary: "Get an API key",
         secondary: "Read the docs",

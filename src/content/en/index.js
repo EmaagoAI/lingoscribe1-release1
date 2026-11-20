@@ -9,7 +9,8 @@ import { platform } from "./platform";
 import { privacy } from "./privacy";
 import { sales } from "./sales";
 import { solutions } from "./solutions";
+import { speakers } from "./speakers";
 import { trust } from "./trust";
 
-const en = { build, common, developers, home, languages, languagesPage, lingodub, platform, privacy, sales, solutions, trust };
+const en = { build, common, developers, home, languages, languagesPage, lingodub, platform, privacy, sales, solutions, speakers, trust };
 export default en;

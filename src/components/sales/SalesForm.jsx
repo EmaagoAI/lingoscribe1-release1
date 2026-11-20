@@ -3,7 +3,8 @@ import { useState } from "react";
 import { Check } from "lucide-react";
 import { CONTACT_EMAIL, ROUTES } from "@/config/routes";
 import { EMAIL_PATTERN, SALES_ENDPOINT, SALES_INTERESTS, SALES_LANGUAGES } from "@/data/sales";
-import { cx, fill } from "@/lib/format";
+import { fill } from "@/lib/format";
+import { ChipGroup, Field, fieldProps } from "@/components/forms/FormParts";
 import Button from "@/components/ui/Button";
 import Rich from "@/components/ui/Rich";
 
@@ -91,13 +92,13 @@ export default function SalesForm({ t, tl }) {
             <ChipGroup label={t.form.interests.label} options={interestOptions} selected={values.interests} onToggle={(id) => toggle("interests", id)} />
 
             <div className="grid gap-4 sm:grid-cols-2">
-                <Field id="f-name" label={t.form.name.label} error={showError("name") && t.form.name.error}>
+                <Field id="f-name" required label={t.form.name.label} error={showError("name") && t.form.name.error}>
                     <input id="f-name" type="text" autoComplete="name" value={values.name} onChange={set("name")} {...fieldProps(showError("name"), "f-name")} />
                 </Field>
-                <Field id="f-email" label={t.form.email.label} error={showError("email") && t.form.email.error}>
+                <Field id="f-email" required label={t.form.email.label} error={showError("email") && t.form.email.error}>
                     <input id="f-email" type="email" autoComplete="email" value={values.email} onChange={set("email")} {...fieldProps(showError("email"), "f-email")} />
                 </Field>
-                <Field id="f-org" label={t.form.org.label} error={showError("org") && t.form.org.error}>
+                <Field id="f-org" required label={t.form.org.label} error={showError("org") && t.form.org.error}>
                     <input id="f-org" type="text" autoComplete="organization" value={values.org} onChange={set("org")} {...fieldProps(showError("org"), "f-org")} />
                 </Field>
             </div>
@@ -120,50 +121,5 @@ export default function SalesForm({ t, tl }) {
                 {status === "sending" ? t.form.sending : t.form.submit}
             </button>
         </form>
-    );
-}
-
-// Shared props for a text input: look, and its error wiring for screen readers.
-function fieldProps(hasError, id) {
-    return {
-        "aria-required": true,
-        "aria-invalid": hasError || undefined,
-        "aria-describedby": hasError ? `${id}-err` : undefined,
-        className: cx("min-h-12 rounded-[10px] border bg-bg px-3.5 font-sans text-base text-fg outline-none focus:border-primary",
-            hasError ? "border-danger" : "border-rule"),
-    };
-}
-
-function Field({ id, label, hint, error, children }) {
-    return (
-        <div className="flex flex-col gap-1.5">
-            <label htmlFor={id} className="flex items-baseline gap-2 text-[15px] font-semibold text-fg">
-                {label}
-                {hint && <span className="text-sm font-normal text-fg-muted">{hint}</span>}
-            </label>
-            {children}
-            {error && <span id={`${id}-err`} className="text-sm text-danger">{error}</span>}
-        </div>
-    );
-}
-
-// A set of on/off chips (several can be on), announced as toggle buttons.
-function ChipGroup({ label, options, selected, onToggle }) {
-    return (
-        <fieldset className="m-0 border-0 p-0">
-            <legend className="mb-2.5 p-0 text-[15px] font-semibold text-fg">{label}</legend>
-            <div className="flex flex-wrap gap-2">
-                {options.map((o) => {
-                    const on = selected.includes(o.id);
-                    return (
-                        <button key={o.id} type="button" aria-pressed={on} onClick={() => onToggle(o.id)}
-                            className={cx("min-h-10 cursor-pointer rounded-full border px-3.5 font-sans text-[14.5px] text-fg transition-colors duration-200",
-                                on ? "border-primary bg-chip-on" : "border-rule bg-panel hover:border-primary/50")}>
-                            {o.label}
-                        </button>
-                    );
-                })}
-            </div>
-        </fieldset>
     );
 }

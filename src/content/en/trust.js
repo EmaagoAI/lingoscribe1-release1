@@ -48,7 +48,7 @@ export const trust = {
     data: {
         title: "Recorded by speakers we hired",
         // {hours} is the total recorded, from data/home.js
-        body: "Our {hours} hours of training data were recorded by native speakers we hired through local offices, not scraped from the internet.",
+        body: "Our {hours}+ hours of training data were recorded by native speakers we hired through local offices, not scraped from the internet.",
     },
 
     voices: {

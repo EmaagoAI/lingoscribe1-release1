@@ -39,7 +39,8 @@ export const TOOL_DEMO = {
     },
 };
 
-// Ways to use Lingoscribe. `icon` is a lucide-react icon name.
+// Ways to use Lingoscribe (How we build counts them for the "products" stage).
+// `icon` is a lucide-react icon name.
 export const WAYS = [
     { id: "browser", href: ROUTES.signup, icon: "AppWindow" },
     { id: "api", href: ROUTES.developers, icon: "Code" },

@@ -13,12 +13,13 @@ export const SCREENSHOTS = {
 export const TTS_LANGUAGES = ["ur", "ps", "sd", "pa", "bal", "ar", "fa", "en"];
 export const TTS_VOICES = ["male", "female", "clone"];
 
-// "One account, four ways in".
+// "One account, four ways in". A channel without `href` shows its link text
+// as a plain "coming soon" label instead of a link.
 export const CHANNELS = [
     { id: "browser", href: ROUTES.signup },
     { id: "api", href: ROUTES.developers },
     { id: "whatsapp", href: "#whatsapp" },
-    { id: "youtube", href: ROUTES.signup },
+    { id: "youtube" }, // extension not released yet
 ];
 
 // Pricing cards.

@@ -51,7 +51,7 @@ export const platform = {
             browser: { title: "In the browser", body: "The playground, speech to text and text to speech pages, with your history.", link: "Start free" },
             api: { title: "Through the API", body: "The same tools as eight endpoints, with one API key.", link: "Read the API" },
             whatsapp: { title: "On WhatsApp", body: "Forward a voice note to our number and get the text back.", link: "See how" },
-            youtube: { title: "On YouTube", body: "A browser extension that adds translated subtitles, using your minutes.", link: "Get the extension" },
+            youtube: { title: "On YouTube", body: "A browser extension that adds translated subtitles, using your minutes.", link: "Coming soon" },
         },
     },
 
