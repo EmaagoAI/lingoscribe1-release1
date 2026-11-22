@@ -33,5 +33,5 @@ export const TEAM = [
     { name: "Hashham Masud", role: "advisor", initials: "HM", linkedin: "https://www.linkedin.com/in/hashaamp/", photo: "/images/team/hashhammasud.webp" },
     { name: "Mohsin Nasir", role: "cto", initials: "MN", linkedin: "https://www.linkedin.com/in/mohsin-nasir-a10829419/", photo: "/images/team/mohsinali.jpeg" },
     { name: "Muneeb Ahmad", role: "cpo", initials: "MA", linkedin: "https://www.linkedin.com/in/muneebahd/", photo: "/images/team/muneebahmed.jpeg" },
-    { name: "Ramzan Bhatti", role: "dataops", initials: "RB", linkedin: "https://www.linkedin.com/in/ramzan-ali-bhatti-7a207a19b/", photo: "/images/team/ramzanbhatti.jpeg" },
+    { name: "Ramzan Bhatti", role: "dataops", initials: "RB", linkedin: "https://www.linkedin.com/in/ramzan-ali-bhatti-7a207a19b/", photo: "/images/team/ramzanbhatti.png" },
 ];
