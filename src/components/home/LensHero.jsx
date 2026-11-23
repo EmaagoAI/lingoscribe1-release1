@@ -37,10 +37,11 @@ export default function LensHero({ t, player, tl }) {
     const lens = useLensDrift();
 
     return (
-        <section aria-labelledby="page-title" onPointerMove={lens.follow} onPointerLeave={lens.release} className="relative overflow-hidden bg-bg">
-            {/* the lens covers the whole hero, player included, so it never gets cut off */}
+        <section aria-labelledby="page-title" onPointerMove={lens.follow} onPointerLeave={lens.release} className="relative bg-bg">
+            {/* the lens covers the whole hero, player included, so it never gets cut off; only
+                this layer clips, so the player's language list can open past the hero */}
             {/* --lens-r is the lens radius: smaller on phones, in step with the smaller words */}
-            <div ref={lens.ref} className="absolute inset-0 [--lens-r:64px] md:[--lens-r:92px]">
+            <div ref={lens.ref} className="absolute inset-0 overflow-hidden [--lens-r:64px] md:[--lens-r:92px]">
                 <WordLayer className="lens-outside" render={(w, i) => (
                     <NativeText lang={w.lang} className={cx("whitespace-nowrap leading-[1.4] text-fg", DEPTH[w.depth].word, PHONE_SIZE[(i * 3) % PHONE_SIZE.length])}>{w.word}</NativeText>
                 )} />

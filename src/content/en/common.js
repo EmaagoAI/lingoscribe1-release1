@@ -74,7 +74,7 @@ export const common = {
         },
         language: "Language",
         languageCount: "{count}+ languages and dialects",
-        moreComing: "{count}+, more coming",
+        moreComing: "{count}, more coming",
         search: "Search {count}",
         searchLabel: "Search languages",
         chooseLanguage: "Choose a language",
