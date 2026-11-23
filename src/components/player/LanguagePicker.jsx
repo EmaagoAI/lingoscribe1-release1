@@ -92,7 +92,8 @@ function Option({ variety, on, t, tl, onPick }) {
                 soon ? "cursor-default text-fg-muted" : "text-fg",
             )}>
             <span className="flex min-w-0 items-baseline gap-2.5">
-                {nativeName(variety) && <span dir="rtl" className="min-w-[58px] shrink-0 font-naskh text-base text-primary">{nativeName(variety)}</span>}
+                {/* always present (empty for English) so every name lines up in the same column */}
+                <span dir="rtl" className="min-w-[58px] shrink-0 font-naskh text-base text-primary">{nativeName(variety)}</span>
                 {varietyLabel(variety, tl)}
             </span>
             <span className="flex shrink-0 items-center gap-2">
