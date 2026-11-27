@@ -42,8 +42,8 @@ export default function CtaSection({ t, trust, links }) {
                     <span className="text-[15px] font-semibold text-white">{trust.title}</span>
                     <ul className="m-0 flex list-none flex-col gap-2.5 p-0">
                         {trust.items.map((line) => (
-                            <li key={line} className="flex items-center gap-2.5 text-[15px] text-inv-sub">
-                                <Check size={16} strokeWidth={2.4} className="shrink-0 text-[#7fe0d6]" aria-hidden="true" />{line}
+                            <li key={line} className="flex items-start gap-2.5 text-[15px] leading-[1.45] text-inv-sub">
+                                <Check size={16} strokeWidth={2.4} className="mt-[3px] shrink-0 text-[#7fe0d6]" aria-hidden="true" />{line}
                             </li>
                         ))}
                     </ul>

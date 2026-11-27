@@ -1,11 +1,12 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { CONTACT_EMAIL } from "@/config/routes";
 
 // Forms on the site, emailed to the team through Gmail SMTP (EMAIL_USER /
 // EMAIL_PASSWORD in the server's environment):
 //   sales enquiries from /talk-to-sales (the default kind)
 //   native-speaker applications from /native-speakers (kind "speaker")
-const TO = "khubaib.khalid@emaago.com";
+const TO = CONTACT_EMAIL; // contact@lingoscribe.ai
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // Everything the visitor typed goes into the email as text, never as HTML.

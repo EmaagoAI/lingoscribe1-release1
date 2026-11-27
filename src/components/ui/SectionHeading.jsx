@@ -2,11 +2,12 @@ import { cx } from "@/lib/format";
 
 // A section title, with an optional line (and anything else) beside it on
 // wide screens and under it on narrow ones.
-//   size  lg (52px) | md (46px) | sm (40px) at full width
+//   size  lg (52px) | md (46px) | sm (40px) | xs (36px) at full width
 const SIZES = {
     lg: "text-4xl md:text-[52px]",
     md: "text-[34px] md:text-[46px]",
     sm: "text-[30px] md:text-[40px]",
+    xs: "text-[30px] md:text-4xl",
 };
 
 export function SectionTitle({ id, size = "lg", className, children }) {

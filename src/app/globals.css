@@ -43,6 +43,7 @@
   --code: #0b1233; /* code blocks */
   --map-dot: #aeb6cb;
   --danger: #b42318; /* form errors */
+  --accent-soft: #eef2ff; /* the chosen tile or stage */
   color-scheme: light;
 }
 
@@ -75,6 +76,7 @@
   --code: #060a18;
   --map-dot: #3e4772;
   --danger: #f87171;
+  --accent-soft: #131b3e;
   color-scheme: dark;
 }
 
@@ -108,6 +110,7 @@
   --color-code: var(--code);
   --color-map-dot: var(--map-dot);
   --color-danger: var(--danger);
+  --color-accent-soft: var(--accent-soft);
 
   --shadow-card: var(--shadow);
   --shadow-lift: var(--lift);

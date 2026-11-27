@@ -12,13 +12,14 @@ export const STORY_VIDEO = {
 // Regions with a local office, in the order they're named.
 export const REGIONS = ["kp", "sindh", "punjab", "balochistan", "gb"];
 
-// The five stages, in order. `image` or `samples` is what shows beside each.
-export const STAGES = [
-    { id: "voices", image: { src: "/images/build-voices.jpeg", width: 1600, height: 900 } },
-    { id: "recordings", samples: ["makrani", "pesh", "bittani", "brahui", "bugti", "waziri"] }, // ids from data/recordings.js
-    { id: "text", image: { src: "/images/build-text.jpeg", width: 1600, height: 900 } },
-    { id: "models" },
-    { id: "products" },
+// The five stages, in order.
+export const STAGES = ["voices", "recordings", "text", "models", "products"];
+
+// The two photos under the stages; `id` keys the alt text and caption in
+// content (stages.photos).
+export const STAGE_PHOTOS = [
+    { id: "recording", src: "/images/build-text.jpeg", width: 1600, height: 900 },
+    { id: "checking", src: "/images/build-voices.jpeg", width: 1600, height: 900 },
 ];
 
 // What we can do for a new language.

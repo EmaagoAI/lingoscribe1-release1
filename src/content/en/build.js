@@ -10,12 +10,18 @@ export const build = {
     hero: {
         title: "Built with the people who speak it.",
         body: "Most AI understands a handful of languages. Pakistan alone speaks dozens, and every region sounds different. So we built the data ourselves, with native speakers, and the method now works for any language AI leaves out.",
+        // Bold figure, then the rest of the line.
+        stats: [
+            { value: "{hours} hours", label: "recorded with native speakers" },
+            { value: "{count}+", label: "languages and dialects" },
+        ],
     },
 
     story: {
         title: "The story so far",
         video: {
             caption: "Our story in 1 minute 38 seconds.",
+            captionFlag: "[Add English and Urdu captions]",
             fallback: "Your browser can’t play this video.",
         },
         steps: [
@@ -24,44 +30,53 @@ export const build = {
             { title: "Every region sounds different.", note: "Same language, different voices." },
             { title: "So we started in Balochistan.", note: "The hardest place to start, so the method would work anywhere." },
             { title: "We hired native speakers.", note: "Through local offices in every province." },
-            { title: "Every recording became data.", note: "{hours}+ hours so far, and growing." },
+            { title: "Every recording became data.", note: "{hours} hours so far, and growing." },
         ],
     },
 
     stages: {
         title: "Five stages, from voices to products",
-        body: "Each stage is something we can now do for a new language.",
-        imageAlt: "Native speakers at work in a Lingoscribe office",
+        body: "Each stage feeds the next, and each one is something we can now do again for a language AI has left out.",
+        stage: "Stage {n}",
         items: {
             voices: {
                 title: "Voices",
                 stat: "{count} regions",
-                body: "Native speakers hired through local offices in {regions}.",
+                body: "Native speakers, hired through an office in each province.",
             },
             recordings: {
                 title: "Recordings",
-                stat: "{hours}+ hours",
-                body: "Everyday speech: at the market, at home, on the way to work.",
-                samplesLabel: "Some of the recordings",
+                stat: "{hours} hours",
+                body: "Everyday speech, not scripts read aloud in a booth.",
             },
             text: {
                 title: "Text",
-                stat: "{hours}+ hours",
-                body: "Transcribed in native script by speakers of the dialect; {translated}+ hours translated.",
+                stat: "{hours} hours",
+                body: "Transcribed in native script, {translated} hours of it translated.",
             },
             models: {
                 title: "Models",
-                stat: "{count}+ live",
-                body: "Speech to text, translation, summaries, speakers, names, keywords, text to speech, voice cloning and speech to speech.",
+                stat: "{count} live",
+                body: "Speech, translation and voice, trained on the data above.",
             },
             products: {
                 title: "Products",
                 stat: "{count} ways in",
-                body: "Web platform, API, Dub Studio, WhatsApp and a YouTube extension.",
+                body: "Platform, API, LingoDub, WhatsApp and a YouTube extension, with voice bots coming.",
             },
         },
-        // "Khyber Pakhtunkhwa, Sindh, Punjab, Balochistan and Gilgit-Baltistan"
-        and: "and",
+        photos: {
+            recording: {
+                alt: "A recording session: the audio captured on screen while a native speaker talks across the table",
+                caption: "Recording with native speakers, in one of five provincial offices.",
+            },
+            checking: {
+                alt: "Two colleagues checking a transcript together at a Lingoscribe office",
+                caption: "Transcribing in native script, checked by speakers of the dialect.",
+            },
+        },
+        recordingTitle: "What a recording is",
+        recordingBody: "Balochi in Makran, going to the market. Pashto in Peshawar, talking to a friend. Sindhi in Karachi, on the way to work. Punjabi in Lahore, ordering at a shop. Shina in Gilgit, talking about the news. Brahui in Quetta, a morning at home.",
     },
 
     regions: {
