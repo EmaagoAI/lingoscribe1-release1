@@ -7,7 +7,7 @@ export default function FeaturesSection({ t }) {
     return (
         <section id="features" aria-labelledby="feat-title" className="bg-bg py-14 md:py-[104px]">
             <Container className="flex flex-col gap-8 md:gap-11">
-                <SectionTitle id="feat-title" size="md" className="max-w-[18ch]">{t.title}</SectionTitle>
+                <SectionTitle id="feat-title" size="md" className="max-w-[26ch]">{t.title}</SectionTitle>
                 <ul className="m-0 grid list-none gap-4 p-0 sm:grid-cols-2 lg:grid-cols-4">
                     {FEATURES.map((id) => (
                         <li key={id}
