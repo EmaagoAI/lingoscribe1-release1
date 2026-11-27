@@ -26,7 +26,7 @@ export const lingodub = {
     },
 
     features: {
-        title: "Built for people who check every line",
+        title: "Built for people who understand every word matters",
         items: {
             lines: { title: "Line-by-line control", body: "Split, merge, add or delete segments on the timeline, and redo only the line that is wrong." },
             speakers: { title: "Speakers kept apart", body: "Each speaker keeps their own voice through the whole video." },
